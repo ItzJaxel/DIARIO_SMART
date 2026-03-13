@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Diario Smart v2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="greeting">Caricamento...</h1>
+            <p id="current-date"></p>
+        </header>
+
+        <div class="section">
+            <button class="btn btn-cv" onclick="loginClasseViva()">🔗 Sincronizza ClasseViva</button>
+            <p class="info-text" style="margin-top:8px;">Effettua il login per personalizzare il tuo diario</p>
+        </div>
+
+        <div class="header-inline">
+            <h2>Voti & Obiettivi</h2>
+            <button class="add-btn" onclick="aggiungiVoto()">+</button>
+        </div>
+        <div class="section">
+            <div class="voti-grid">
+                <div class="voto-box">
+                    <span class="voto-numero" id="media-voti">0.0</span>
+                    <span class="voto-label">Media Attuale</span>
+                </div>
+                <div class="voto-box">
+                    <input type="number" id="target-media" value="7" step="0.1" onchange="renderizzaTutto()">
+                    <span class="voto-label">Media Obiettivo</span>
+                </div>
+            </div>
+            <div id="simulatore-risultato" class="info-text" style="color: var(--blue); font-weight: 600;"></div>
+        </div>
+
+        <div class="header-inline">
+            <h2>Compiti & Produttività</h2>
+            <button class="add-btn" onclick="aggiungiCompito()">+</button>
+        </div>
+        <div class="section" id="task-list">
+            <div class="empty-state">Tutto pronto! 🎉</div>
+        </div>
+        <div id="alert-carico" class="alert-box" style="display:none;"></div>
+
+        <div class="header-inline">
+            <h2>Mood del Giorno</h2>
+        </div>
+        <div class="section emoji-row">
+            <span onclick="setMood('😊')">😊</span>
+            <span onclick="setMood('😐')">😐</span>
+            <span onclick="setMood('🤯')">🤯</span>
+            <span onclick="setMood('😴')">😴</span>
+        </div>
+        <p id="selected-mood" class="info-text" style="text-align:center;"></p>
+
+        <nav class="tab-bar">
+            <div class="tab-item active">🏠<br>Home</div>
+            <div class="tab-item" onclick="svuotaDati()">🗑️<br>Reset</div>
+        </nav>
+        <div style="height: 100px;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

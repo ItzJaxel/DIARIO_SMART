@@ -1,0 +1,73 @@
+:root {
+    --bg: #ffffff;
+    --text: #1c1c1e;
+    --gray-bg: #f2f2f7;
+    --blue: #007aff;
+    --orange: #ff9500;
+    --border: #e5e5ea;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #000000;
+        --text: #ffffff;
+        --gray-bg: #1c1c1e;
+        --border: #38383a;
+    }
+}
+
+body {
+    font-family: -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0; padding: 20px;
+}
+
+.container { max-width: 450px; margin: 0 auto; }
+header h1 { font-size: 26px; margin-bottom: 5px; }
+header p { color: #8e8e93; margin: 0; font-size: 15px; }
+h2 { font-size: 13px; text-transform: uppercase; color: #8e8e93; margin-top: 25px; }
+
+.section {
+    background: var(--gray-bg);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+}
+
+.voti-grid { display: flex; justify-content: space-around; margin-bottom: 10px; }
+.voto-numero { font-size: 32px; font-weight: bold; color: var(--blue); }
+#target-media {
+    width: 60px; font-size: 28px; font-weight: bold;
+    background: transparent; border: none; color: var(--blue); text-align: center;
+}
+
+.add-btn {
+    background: var(--blue); color: white; border: none;
+    border-radius: 50%; width: 30px; height: 30px; font-size: 20px; cursor: pointer;
+}
+
+.btn-cv {
+    background: #0054A6; color: white; border: none; width: 100%;
+    padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer;
+}
+
+.todo-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+
+.emoji-row { display: flex; justify-content: space-around; font-size: 30px; cursor: pointer; }
+.alert-box {
+    background: rgba(255, 149, 0, 0.15); color: var(--orange);
+    padding: 10px; border-radius: 8px; font-size: 13px; margin-bottom: 15px; font-weight: 500;
+}
+
+.tab-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; height: 75px;
+    background: var(--gray-bg); border-top: 1px solid var(--border);
+    display: flex; justify-content: space-around; align-items: center;
+    padding-bottom: 10px;
+}
+.info-text { font-size: 12px; color: #8e8e93; text-align: center; }
